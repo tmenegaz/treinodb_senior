@@ -1,0 +1,31 @@
+domain erpx
+entities {
+	generateExtraResources: true
+	securityType : secure
+	enumType : string
+	auditing {
+		createBy: attributeName=usuger columnName=usuger
+		createdDate: attributeName=datger columnName=datger
+		lastModifiedBy: attributeName=usualt columnName=usualt
+		lastModifiedDate: attributeName=datalt columnName=datalt
+	}
+}
+
+service trn {
+	entities {
+		entity tarefa {
+			tableName: tarefas
+			relationships {
+				OneToMany(participantes) {
+					type: aggregation
+					cascadeType: none
+					fetchType: lazy
+				}
+			}
+		}
+		
+		entity participante {
+			tableName: participantes
+		}
+	}	
+}

@@ -1,0 +1,50 @@
+properties erpx.trn {
+  	version:"1.0.0"
+  	
+	/**
+	 * Service database
+	 */
+ 	property db.url {
+ 		scope: service
+		master: true
+		level: infra
+		type: string
+		label: "platform.configuration.db_url_label"
+		comment: "platform.configuration.db_url_comment"
+		required: true
+		hashTags: ["db", "database"]
+ 	}
+	 	
+ 	property db.username {
+ 		scope: service
+		master: true
+		level: infra
+		type: string
+		label: "platform.configuration.db_username_label"
+		comment: "platform.configuration.db_username_comment"
+		required: true
+		hashTags: ["db", "database"]
+ 	}
+ 	
+ 	property db.password {
+ 		scope: service
+		master: true
+		level: infra
+		type: secret
+		label: "platform.configuration.db_password_label"
+		comment: "platform.configuration.db_password_comment"
+		required: true
+		hashTags: ["db", "database"]
+ 	}
+ 	
+ 	property db.schema.name {
+ 		scope: service
+		master: true
+		level: infra
+		type: string
+		label: "platform.configuration.db_schema_name_label"
+		comment: "platform.configuration.db_schema_name_comment"
+		required: false
+		hashTags: ["db", "database"]
+ 	}
+}

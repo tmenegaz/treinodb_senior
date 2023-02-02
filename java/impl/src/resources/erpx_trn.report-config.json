@@ -1,0 +1,8 @@
+{
+  "configuration" : {
+    "url" : "db.url",
+    "schema" : "db.schema",
+    "user" : "db.username",
+    "password" : "db.password"
+  }
+}

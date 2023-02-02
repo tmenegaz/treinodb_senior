@@ -1,0 +1,57 @@
+{
+	"domainDescription" : "Erpx",
+	"domain" : "erpx",
+	"service" : "trn",
+	"description" : "Todo List DB",
+	"resources": [
+	{
+		"name": "tarefa",
+		"label": "platform.authorization.erpx_trn_entities_tarefa_label",
+		"description": "platform.authorization.erpx_trn_entities_tarefa_description",
+		"URI": "res://senior.com.br/erpx/trn/entities/tarefa",
+		"actions" : [
+		    {
+		    	"name": "Incluir",
+		    	"label": "platform.authorization.erpx_trn_entities_tarefa_action_incluir_label"
+		    },
+		    {
+		    	"name": "Editar",
+		    	"label": "platform.authorization.erpx_trn_entities_tarefa_action_editar_label"
+		    },
+		    {
+		    	"name": "Excluir",
+		    	"label": "platform.authorization.erpx_trn_entities_tarefa_action_excluir_label"
+		    },
+		    {
+		    	"name": "Visualizar",
+		    	"label": "platform.authorization.erpx_trn_entities_tarefa_action_visualizar_label"
+		    }
+		]
+	},
+	{
+		"name": "participante",
+		"label": "platform.authorization.erpx_trn_entities_participante_label",
+		"description": "platform.authorization.erpx_trn_entities_participante_description",
+		"URI": "res://senior.com.br/erpx/trn/entities/participante",
+		"actions" : [
+		    {
+		    	"name": "Incluir",
+		    	"label": "platform.authorization.erpx_trn_entities_participante_action_incluir_label"
+		    },
+		    {
+		    	"name": "Editar",
+		    	"label": "platform.authorization.erpx_trn_entities_participante_action_editar_label"
+		    },
+		    {
+		    	"name": "Excluir",
+		    	"label": "platform.authorization.erpx_trn_entities_participante_action_excluir_label"
+		    },
+		    {
+		    	"name": "Visualizar",
+		    	"label": "platform.authorization.erpx_trn_entities_participante_action_visualizar_label"
+		    }
+		]
+	}
+]
+
+}

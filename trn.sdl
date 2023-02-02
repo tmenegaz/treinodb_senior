@@ -1,0 +1,89 @@
+domain erpx
+
+service trn {
+    endpoints {
+    	// add actions, queries, events and signals here
+        query helloWorld {
+            out {
+                helloWorldMessage : string
+            }
+        }
+
+		"Query para o SRE verificar a disponibilidade do serviço"
+    	query healthcheck {
+	        in {
+        	}
+        	out {
+	            "Status geral do serviço"
+            	status : upDown
+            	"Verificações para assegurar o status"
+            	checks : checkData*
+        	}
+    	}
+    	
+    	 "Responsável por obter o participante de uma tarefa"
+    	     public query obterParticipanteTarefa {
+                in {
+                    "Tarefa"
+                    descricao: string
+                }
+                out {
+                    "Participantes"
+                    participante: participante*
+                }
+            }
+    	
+    	
+    	public action adicionaParticipanteTarefa {
+    		in {
+                    "Participante"
+                    participante: participante
+
+                    "Tarefa"
+                    descricao: string
+                }
+                out {
+                    "Resultado da operação"
+                    result: string
+                }    		
+    	}
+    }
+    types {
+    	// define records and enumerations here
+        
+        "Up or down"
+    	enumeration upDown {
+        	"Up"
+        	UP
+        	"Down"
+        	DOWN
+    	}
+
+    	"Dados do healthcheck"
+    	record checkData {
+	       "Nome do healthcheck"
+        	name : string
+        	"Status do healthcheck"
+        	status : upDown
+    	}
+    }
+    entities {    	
+    	"Gerenciamento das tarefas"
+    	entity tarefa {
+    		"código único da tarefa"
+    		id: uuid?
+    		"descrção da tarefa por realizar"
+    		descricao: string
+    		"lista de participantes da tarefa"
+    		participantes: participante?*
+    	}
+    	
+    	"Participante de uma tarefa"
+    	entity participante {
+    		"código único do participante"
+    		id: uuid?
+    		"nome do prticipante"
+    		nome: string
+    	}
+    }
+} 

@@ -1,0 +1,17 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="service" transaction-type="RESOURCE_LOCAL">
+	
+	<!-- GENERATED ENTITIES: 2023-02-02 14:31:09:367 -->
+	<class>br.com.senior.erpx.trn.TarefaEntity</class>
+	<class>br.com.senior.erpx.trn.Tarefa_ParticipantesEntity</class>
+	<class>br.com.senior.erpx.trn.ParticipanteEntity</class>
+
+	
+	<properties>
+		<property name="hibernate.show_sql" value="true" />
+	</properties>
+	</persistence-unit>
+</persistence>
