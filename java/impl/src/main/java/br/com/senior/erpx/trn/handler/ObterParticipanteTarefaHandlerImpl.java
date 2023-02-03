@@ -16,7 +16,7 @@ import br.com.senior.erpx.trn.repositories.TarefaRepository;
 import br.com.senior.messaging.model.HandlerImpl;
 
 @HandlerImpl
-public class ObterParticipanteTarefaHandler implements ObterParticipanteTarefa {
+public class ObterParticipanteTarefaHandlerImpl implements ObterParticipanteTarefa {
 
     @Autowired
     private TarefaRepository repository = null;

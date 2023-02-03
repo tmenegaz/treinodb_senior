@@ -1,7 +1,7 @@
 domain erpx
 
 service trn {
-    endpoints {
+endpoints {
     	// add actions, queries, events and signals here
         query helloWorld {
             out {
@@ -47,9 +47,41 @@ service trn {
                     result: string
                 }    		
     	}
+    	
+    	public action concluirTarefa {
+    		in {
+    			"código da tarefa"
+    			id: string
+    		}
+    		out {}
+    	}
+    	
+    	event startTarefaConcluida {
+    		payload {
+    			id: string
+    		}    		
+    	}
+    	
+    	event tarefaConcluida {
+    		payload {
+    			id: string
+    			^error: boolean
+    			sg: string
+    		}    		
+    	}
     }
     types {
-    	// define records and enumerations here
+    	
+    	enumeration situacao {
+    		"Aberta"
+    		ABERTA
+    		"Concluida"
+    		CONCLUIDA
+    		"Cancelada"
+    		CANCELADA
+    		"Pausada"
+    		PAUSADA
+    	}
         
         "Up or down"
     	enumeration upDown {
@@ -74,8 +106,12 @@ service trn {
     		id: uuid?
     		"descrção da tarefa por realizar"
     		descricao: string
+    		"data de criação da tarefa"
+    		data: date?
     		"lista de participantes da tarefa"
     		participantes: participante?*
+    		"saber a situação da tarefa"
+    		situacao: situacao?
     	}
     	
     	"Participante de uma tarefa"

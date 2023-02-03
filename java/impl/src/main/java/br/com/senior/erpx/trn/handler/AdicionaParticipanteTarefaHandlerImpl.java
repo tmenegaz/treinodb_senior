@@ -16,7 +16,7 @@ import br.com.senior.erpx.trn.repositories.TarefaRepository;
 import br.com.senior.messaging.model.HandlerImpl;
 
 @HandlerImpl
-public class AdicionaParticipanteTarefaHandler implements AdicionaParticipanteTarefa {
+public class AdicionaParticipanteTarefaHandlerImpl implements AdicionaParticipanteTarefa {
 
     @Autowired
     private TarefaRepository tarefaRepository;
@@ -47,7 +47,7 @@ public class AdicionaParticipanteTarefaHandler implements AdicionaParticipanteTa
             tarefa = tarefaRepository.save(tarefa);
             ret.result = "Participante adicionado à tarefa.";
         } catch (Exception e) {
-            logger.severe("Erro:" + e.getMessage());
+            logger.severe("Erro: " + e.getMessage());
             e.printStackTrace();
             ret.result = "Participante não pôde ser adicionado à tarefa.";
         }
